@@ -1,0 +1,56 @@
+$primary-color: #2c3e50;
+$spacing-unit: 16px;
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.card {
+    max-width: 300px;
+    border: 1px solid #eee;
+    margin: $spacing-unit;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    @include border-radius(12px);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__content {
+        padding: $spacing-unit;
+    }
+
+    &__title {
+        color: $primary-color;
+        font-size: 1.5rem;
+        margin: 0 0 ($spacing-unit / 2) 0;
+    }
+
+    &__description {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0 0 $spacing-unit 0;
+    }
+
+    &__button {
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        padding: 10px $spacing-unit;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        @include border-radius(6px);
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
